@@ -1,0 +1,87 @@
+
+{% extends 'news/__base.html' %}
+{% load humanize %}
+{% load mptt_tags %}
+
+
+
+{% block content %}
+
+
+
+
+<article class="site-content">
+    
+        <h2>The Zen of {{SITE_NAME}} (aka Guidelines)</h2>
+
+        <p class="smaller">Based on <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a></p>
+
+        <p>{{SITE_NAME}} is a platform for friends of <a href="https://python.org">Python</a>
+        (the programming language).<br>
+        It shall enable people to discover, share and discuss interesting thoughts, publications or web pieces about
+        Python and its related fields.<br>
+        On the platform, anybody shall feel welcomed.
+        </p>
+
+
+        <h3>Beautiful is better than ugly.</h3>
+        <p>
+        Be beautiful to each other. Always remember, {{SITE_NAME}} is a community built around Python stuff, which
+        is mostly technical. When discussing this kind of stuff, there is no need to offend someone personally. 
+        </p>
+
+        <h3>Explicit is better than implicit.</h3>
+        <p>Be on-topic. We are here to discuss the Python programming language, its ecosystem, its applications and
+        its community. For off-topic discussions there are plenty of forums out there on the net. <br>
+        This community regards political discussions as off-topic, unless discussion the walrus operator (just kidding).</p>
+
+        <h3>In the face of ambiguity, refuse the temptation to guess.</h3>
+        <p>Please think of a contribution of another member of this community as well-intended. We should all assume
+        that people here behave nicely and respectful. </p>
+
+        <!--<h3>Now is better than never.</h3>
+        <p></p>
+
+        <h3>Although never is often better than *right* now.</h3>
+        <p></p>-->
+
+        <h3>Errors should never pass silently.</h3>
+        <p>We value transparency. If there is any action taken by moderators on submissions, comments or user accounts,
+        we try to be as clear about what happened as possible. For now, there is no moderation system in place. This means
+        that we might be forced to delete contributions silently when we notice off-topic, disrespectful or otherwise abusive
+        content without further notice. However, a moderation audit trail is on the roadmap to be implemented soon</p>
+
+
+        <h3>Code of Conduct</h3>
+        <p>This is a news aggregator and we all want to be nice to each other. Rude behaviour in form of continiously spamming,
+        posting off-topic content, offending people ad-hominem, will result in a ban.</p>
+
+        <!--Beautiful is better than ugly.
+        Explicit is better than implicit.
+        Simple is better than complex.
+        Complex is better than complicated.
+        Flat is better than nested.
+        Sparse is better than dense.
+        Readability counts.
+        Special cases aren't special enough to break the rules.
+        Although practicality beats purity.
+        Errors should never pass silently.
+        Unless explicitly silenced.
+        In the face of ambiguity, refuse the temptation to guess.
+        There should be one-- and preferably only one --obvious way to do it.
+        Although that way may not be obvious at first unless you're Dutch.
+        Now is better than never.
+        Although never is often better than *right* now.
+        If the implementation is hard to explain, it's a bad idea.
+        If the implementation is easy to explain, it may be a good idea.
+        Namespaces are one honking great idea -- let's do more of those!-->
+    
+
+</article>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,186 @@
+/*
+
+https://www.schemecolor.com/python-logo-colors.php
+Cyan-Blue Azure     #4B8BBE
+Lapis Lazuli        #306998
+Shandy              #FFE873
+Sunglow             #FFD43B
+Granite Gray        #646464
+
+
+*/
+/* https://encycolorpedia.com/646464 */
+
+/* General formatting */
+
+body        { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#646464; }
+td          { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#646464; }
+.smaller    { font-size:7pt; }
+
+input       { font-family:monospace; font-size:10pt; }
+input[type=\"submit\"] { font-family:Verdana, Geneva, sans-serif; }
+textarea    { font-family:monospace; font-size:10pt; }
+
+a { color: inherit; }
+.green { color:green; }
+
+nav#top-bar { background-color:#306998; }
+nav#footer-bar { background-color:#FFD43B; }
+main { background-color: #EDF3F9; }
+nav#top-bar * { color:#FFE873; }
+
+.site-content { margin: 3%; }
+.site-content-dense  { margin: 1%; }
+td {padding-right:8px; vertical-align: text-top;}
+#top-bar td {vertical-align: middle;}
+tr.spacer {height:1em;}
+
+.highlight {background-color:#FFE873;}
+.self-item {color: #4B8BBE;}
+
+.title > a {
+    text-decoration: none;
+}
+
+/* td {border:1px solid red;} */
+
+/* Site layout */
+
+nav#top-bar *.active {
+    color: #FFD43B;
+    font-weight: bold;
+}
+
+#pnmain {
+    width: 85%;
+    margin: auto;
+}
+
+nav#pre-footer-bar > hr {
+    border-top: 2px solid #306998;
+    width: 95%;
+}
+
+
+
+/* Item Layout */
+
+
+
+/* Forms */
+
+form.logout-form {
+    border: 0;
+    margin:0;
+    padding:0;
+    display:inline;
+}
+
+.logout-button {
+    margin:0;
+    border:0;
+    padding:0;
+    background: transparent;
+    text-decoration: underline;
+    font-family:Verdana, Geneva, sans-serif; font-size:10pt;
+    cursor: pointer;
+}
+
+form.comment-form {
+    padding: 20px;
+}
+
+.vote-form {
+    border: 0;
+    margin:0;
+    padding:0;
+}
+
+.vote-button {
+    background:transparent;
+    display:block;
+    padding:0;
+    padding-top:4px;
+    /* border: 1px solid red; */
+    border:0;
+}
+
+/* http://apps.eky.hk/css-triangle-generator/ */
+div.arrow-up {
+    position:relative;
+    top:-2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0.3em 0.7em 0.3em;
+    border-color: transparent transparent #646464 transparent;
+}
+
+div.arrow-down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.7em 0.3em 0 0.3em;
+    border-color: #646464 transparent transparent transparent;
+}
+
+
+.controls { line-height:6pt; vertical-align: text-top;  }
+
+
+/* mobile device */
+@media only screen
+and (min-width : 300px)
+and (max-width : 750px) {
+  #pnmain { width: 100%; margin:0; }
+  body { padding: 0; margin: 0; width: 100%; -webkit-text-size-adjust: none; }
+  td { height: inherit !important; }
+  .title, .comment { font-size: inherit;  }
+  span.pagetop { display: block; margin: 3px 5px; font-size: 12px; }
+  span.pagetop b { display: block; font-size: 15px; }
+
+
+    .vote-form {
+        padding:0.2em;
+        transform: scale(1.8);
+    }
+
+    body        { font-family:Verdana, Geneva, sans-serif; font-size:12pt; color:#646464; }
+    td          { font-family:Verdana, Geneva, sans-serif; font-size:12pt; color:#646464; }
+    .smaller    { font-size:10pt; }
+
+    button { 
+        background-color: #e3e3e3; 
+        border: #646464;
+        color: #535353;
+        padding: 0.8em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+
+    div.arrow-up {
+        position:relative;
+        top:-2px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0.2em 0.6em 0.2em;
+        border-color: transparent transparent #646464 transparent;
+    }
+    
+    div.arrow-down {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0.6em 0.2em 0 0.2em;
+        border-color: #646464 transparent transparent transparent;
+    }
+
+
+}
+
+
+
+

@@ -1,0 +1,9 @@
+{% if False and subscription_form %}
+<p>Don't miss interesting Python stories by subscribing to our digest</p>
+
+    <form class="subscription-form" method="POST" action="{% url 'emaildigest_subscribe' %}">
+        {% csrf_token %}
+        {{subscription_form}}
+        <button type="submit">Get Python stories to your inbox</button>
+    </form>
+{% endif %}

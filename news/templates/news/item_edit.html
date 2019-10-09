@@ -1,0 +1,35 @@
+
+{% extends 'news/__base.html' %}
+{% load humanize %}
+{% load mptt_tags %}
+{% load news_extra %}
+
+
+
+
+
+{% block content %}
+<article class="site-content-dense">
+
+
+
+<table  border="0" cellpadding="0" cellspacing="0" class="item-list">
+
+        {% news_item item=item rank=None hide_text=False user=user %}
+
+</table>
+
+
+
+
+{% if edit_form %}
+<form method="POST" class="comment-form" >{% csrf_token %}
+    {{ edit_form.text }}<a class="smaller" href="{% url 'zen' %}">guidelines</a>
+    <br>
+    <button type="submit">save item</button>
+</form>
+{% endif %}
+
+
+</article>
+{% endblock content %}

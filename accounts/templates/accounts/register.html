@@ -1,0 +1,18 @@
+{% extends 'accounts/__base.html' %}
+
+{% block content %}
+<article class="site-content-dense">
+<h2>Create Account</h2>
+<p>While you don't need to supply an email address, it is strongly recommended to do so. Without an email address, we won't be able to restore your account 
+if you've lost your password.</p>
+<form method="post">
+  {% csrf_token %}
+  <table>
+  {{ form.as_table }}
+  </table>
+  <br>
+  <p class="smaller">By signing up, you agree to the <a href="{% url 'zen' %}">Zen of {{SITE_NAME}}</a>.</p>
+  <button type="submit">create account</button>
+</form>
+</article>
+{% endblock content %}

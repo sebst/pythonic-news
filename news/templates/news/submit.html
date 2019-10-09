@@ -1,0 +1,20 @@
+{% extends 'news/__base.html' %}
+
+{% block content %}
+<article class="site-content-dense">
+<form method="POST">{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<button type="submit">submit</button>
+</form>
+
+<p>
+Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the thread.
+</p><p>
+You can also submit via <a href="{% url 'bookmarklet' %}">bookmarklet</a>.
+</p>
+
+
+</article>
+{% endblock content %}

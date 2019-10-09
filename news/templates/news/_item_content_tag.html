@@ -1,0 +1,22 @@
+{% load news_extra %}
+
+<div style="margin-bottom:3pt; ">
+                    {% if item.title %}
+                    <span class="title">
+                        {% if item.url %}
+                            <a rel="ugc" href="{{item.url}}">{{item.title}}</a> {% if item.domain %}<span class="smaller">(<a href="{% url 'newest' %}?site={{item.domain}}">{{item.domain}}</a>)</span>{% endif %}
+                        {% else %}
+                            <a href="{{item.get_absolute_url}}">{{item.title}}</a>
+                        {% endif %}
+                        <br />
+                        
+                    </span>
+                    {% endif %}
+                    {% if item.text and not hide_text %}
+                    <span class="text">
+                        {{item.text}}
+                        <br />
+                        
+                    </span>
+                    {% endif %}
+</div>

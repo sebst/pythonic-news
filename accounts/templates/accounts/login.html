@@ -1,0 +1,15 @@
+{% extends 'accounts/__base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+Signed in.
+{% else %}
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+<a href="{% url 'password_forgotten' %}">password forgotten?</a>
+{% endif %}
+{% endblock content %}

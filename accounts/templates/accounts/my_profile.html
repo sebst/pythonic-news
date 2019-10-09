@@ -1,0 +1,31 @@
+{% extends 'accounts/__base.html' %}
+
+{% block content %}
+<article class="site-content-dense">
+<form method="POST">{% csrf_token %}
+<table>
+{{form.as_table}}
+</table>
+<button type="submit">update</button>
+</form>
+
+{% if user.email and not verified %}
+<hr />
+<form method="POST" action="{% url 'accounts_resend_verification' %}">{% csrf_token %}
+<button type="submit">Resend verification email</button>
+</form>
+{% endif %}
+
+
+<hr />
+
+<a href="{% url 'password_change' %}">change password</a> <br>
+<a href="{% url 'newest' %}?submitted_by={{user}}">submissions</a> <br>
+<a href="{% url 'comments' %}?submitted_by={{user}}">comments</a> <br>
+{% comment %} <a href="#">hidden</a> <br>
+<a href="#">flagged</a> <br> {% endcomment %}
+<a href="{% url 'newest' %}?upvoted_by={{user}}">upvoted submissions</a> / <a href="{% url 'comments' %}?upvoted_by={{user}}">upvoted comments</a> <br>
+{% comment %} <a href="#">favourite submissions</a> / <a href="#">favourite comments</a> <br> {% endcomment %}
+
+</article>
+{% endblock content %}

@@ -1,0 +1,28 @@
+
+{% extends 'news/__base.html' %}
+{% load humanize %}
+{% load mptt_tags %}
+
+
+
+{% block content %}
+
+
+
+
+<article class="site-content">
+    
+        <form method="POST">{% csrf_token %}
+        Do yo really want to unsubscribe?<br>
+        <button type="submit">Yes, unsubscribe</button>
+        </form>
+    
+
+</article>
+
+
+
+
+
+
+{% endblock content %}

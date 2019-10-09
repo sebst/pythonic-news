@@ -1,0 +1,95 @@
+{% load static %}{% load humanize %}{% load emaildigest_extra %}<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{SITE_NAME}}">
+    <meta property="og:site_name" content="{{SITE_NAME}}">
+    <meta name="generator" content="Python+Django" />
+    <meta name="theme-color" content="#306998" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="emoji" content="🐍" />
+    <link rel="stylesheet" type="text/css" href="{% static 'news.css'%}" />
+    <link rel="icon" type="image/png" sizes="144x144" href="{% static 'icon.png' %}" />
+    <!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />-->
+    <meta name="google-site-verification" content="WDbUHr8ccfJXaHWxNrjsVYPOMC8ooxhgHil3BLKkslA" />
+    <meta name="msvalidate.01" content="9F28DFABF82B307C80AA587B7FC11195" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-437457-25"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-437457-25');
+    </script>
+
+    <title>{% block title %}{% endblock title %}{{SITE_NAME}}</title>
+</head>
+
+
+<body>
+    <main id="pnmain">
+        <nav id="top-bar">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px">
+                <tbody>
+                    <tr>
+                        <td style="width:18px;padding-right:4px"><a href={% url 'index' %}><img alt="Python Icon" src="{% static 'icon.png' %}" width="18" height="18" style="border:1px white solid; background-color: white;"></a></td>
+                        <td style="line-height:12pt; height:10px;">
+                            <span class="pagetop">
+                            <b class="pnname">
+
+                            <a href="{% url 'index' %}">{{SITE_NAME}}</a></b>
+                            {% url 'newest' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>new</a>
+                            | {% url 'threads' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>threads</a>
+                            | {% url 'comments' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>comments</a>
+                            | {% url 'ask' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>ask</a>
+                            | {% url 'show' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>show</a>
+                            {% url 'submit' as url %}
+                            | <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>submit</a>
+                            </span></td>
+                        <td style="text-align:right;padding-right:4px;">
+                        <span class="pagetop">
+                            {% if user.is_authenticated %}
+                            {% url 'accounts_my_profile' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>{{user}}</a> ({{user.karma}}) 
+                            | <form method="POST" action="{% url 'logout' %}" class="logout-form">{% csrf_token %}&nbsp;<button class="logout-button">logout</button></form>
+                            {% else %}
+                            {% url 'login' as url %}
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>login</a>
+                            {% url 'accounts_register' as url %}
+                            | <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>register</a>
+                            {% endif %}
+                        </span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </nav>
+
+{% block content %}{% endblock content %}
+
+        <nav id="pre-footer-bar">
+            <hr>
+            {% if not prevent_footer_subscription_form %}
+                {% digest_subscription_form user=user %}
+            {% endif %}
+        </nav>
+
+
+        <nav id="footer-bar">
+            <p class="smaller">{{SITE_NAME}} is a community to discuss everything around the Python Programming language. This community is not affiliated with the Python Software Foundation.</p>
+        </nav>
+    </main>
+<script type="text/javascript" src="{% static 'news.js'%}"></script>
+</body>
+</html>

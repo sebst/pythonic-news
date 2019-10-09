@@ -1,0 +1,20 @@
+{% extends 'accounts/__base.html' %}
+
+{% block content %}
+{% load mptt_tags %}
+
+<ul class="root">
+    {% recursetree users %}
+        <li>
+            {{ node.username }}
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ invitees }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>
+
+
+{% endblock content %}

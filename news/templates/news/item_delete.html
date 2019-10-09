@@ -1,0 +1,30 @@
+
+{% extends 'news/__base.html' %}
+{% load humanize %}
+{% load mptt_tags %}
+{% load news_extra %}
+
+
+
+
+
+{% block content %}
+<article class="site-content-dense">
+
+Are you sure, you want to delete this: <br>
+
+
+<div style="margin:2em;">
+<table  border="0" cellpadding="0" cellspacing="0" class="item-list">
+        {% news_item item=item rank=None hide_text=False user=user %}
+</table>
+</div> 
+
+<form method="POST" class="comment-form" >{% csrf_token %}
+    <button type="submit">delete item</button>
+</form>
+
+
+
+</article>
+{% endblock content %}

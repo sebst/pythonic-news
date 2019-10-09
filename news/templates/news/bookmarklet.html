@@ -1,0 +1,21 @@
+{% extends "news/__base.html" %}
+{% load humanize %}
+{% load static %}
+{% load mptt_tags %}
+{% load news_extra %}
+
+
+{% block content %}
+<article class="site-content">
+
+
+<p>When you click on the bookmarklet, it will submit the page you're on. To install, drag this link to your browser toolbar:</p>
+
+<center>
+<a style="color: #777; font-size: 2em;" rel="nofollow" href="javascript:window.location=%22https://news.python.sc/submit?u=%22+encodeURIComponent(document.location)+%22&t=%22+encodeURIComponent(document.title)">post to 🐍</a>
+</center>
+
+
+</article>
+
+{% endblock content %}

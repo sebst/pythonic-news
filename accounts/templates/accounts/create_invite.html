@@ -1,0 +1,10 @@
+{% extends 'accounts/__base.html' %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'accounts_create_invite' %}">{% csrf_token %}
+{{form}}
+<button type="submit">invite</button>
+</form>
+
+{% endblock content %}

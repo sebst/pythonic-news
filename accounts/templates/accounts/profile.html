@@ -1,0 +1,31 @@
+{% extends 'accounts/__base.html' %}
+
+{% block content %}
+<article class="site-content-dense">
+<table>
+<tbody>
+    <tr>
+        <th>user:</th>
+        <td>{{profile}}</td>
+    </tr>
+    <tr>
+        <th>created:</th>
+        <td>{{profile.date_joined}}</td>
+    </tr>
+    <tr>
+        <th>karma:</th>
+        <td>{{profile.karma}}</td>
+    </tr>
+    <tr>
+        <th>about:</th>
+        <td>{{profile.about}}</td>
+    </tr>
+</tbody></table>
+
+
+<a href="{% url 'newest' %}?submitted_by={{profile}}">submissions</a> <br>
+<a href="{% url 'comments' %}?submitted_by={{profile}}">comments</a> <br>
+</article>
+
+
+{% endblock content %}
