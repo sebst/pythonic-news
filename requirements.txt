@@ -32,6 +32,8 @@ ipython-genutils==0.2.0
 jedi==0.15.1
 jmespath==0.9.4
 jsonschema==2.6.0
+Markdown==3.1.1
+mistune==0.8.4
 parso==0.5.1
 pathspec==0.5.9
 pexpect==4.7.0

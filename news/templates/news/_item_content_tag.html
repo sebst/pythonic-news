@@ -8,15 +8,9 @@
                         {% else %}
                             <a href="{{item.get_absolute_url}}">{{item.title}}</a>
                         {% endif %}
-                        <br />
-                        
                     </span>
                     {% endif %}
                     {% if item.text and not hide_text %}
-                    <span class="text">
-                        {{item.text}}
-                        <br />
-                        
-                    </span>
+                        {{ item.text | comment_markdown }}
                     {% endif %}
 </div>
