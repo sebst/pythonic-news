@@ -21,6 +21,22 @@ input       { font-family:monospace; font-size:10pt; }
 input[type=\"submit\"] { font-family:Verdana, Geneva, sans-serif; }
 textarea    { font-family:monospace; font-size:10pt; }
 
+.clearfix { overflow: hidden; clear: both }
+
+p.small { margin: 5px 0; }
+
+ul.horizontal-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.horizontal-list li {
+    display: inline-block;
+}
+
+button { padding: 0.25em; }
+
 a { color: inherit; }
 .green { color:green; }
 
@@ -90,6 +106,20 @@ form.comment-form {
     padding: 20px;
 }
 
+form.comment-form textarea {
+    width: 50%;
+    resize: vertical;
+}
+
+form.comment-form button {
+    float: left;
+    margin-right: 10px;
+}
+
+form.comment-form ul {
+    float: left;
+}
+
 .vote-form {
     border: 0;
     margin:0;
@@ -127,6 +157,29 @@ div.arrow-down {
 
 .controls { line-height:6pt; vertical-align: text-top;  }
 
+.formatting-help {
+    border: 2px solid #ddd;
+    padding: 0.25em;
+    margin: 0 20px;
+    box-sizing: border-box;
+}
+
+.formatting-help.closed {
+    display: none;
+}
+
+.formatting-help h3 {
+    display: block;
+    margin: 0;
+    padding: 0.5em 0 0.25em 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.formatting-help h3:first-child {
+    padding-top: 0;
+}
+
 
 /* mobile device */
 @media only screen
@@ -138,7 +191,6 @@ and (max-width : 750px) {
   .title, .comment { font-size: inherit;  }
   span.pagetop { display: block; margin: 3px 5px; font-size: 12px; }
   span.pagetop b { display: block; font-size: 15px; }
-
 
     .vote-form {
         padding:0.2em;
@@ -153,12 +205,14 @@ and (max-width : 750px) {
         background-color: #e3e3e3; 
         border: #646464;
         color: #535353;
-        padding: 0.8em;
         text-align: center;
         text-decoration: none;
         display: inline-block;
     }
 
+    form.comment-form textarea {
+        width: 100%;
+    }
 
     div.arrow-up {
         position:relative;
@@ -180,7 +234,3 @@ and (max-width : 750px) {
 
 
 }
-
-
-
-

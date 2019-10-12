@@ -21,11 +21,18 @@
 
 
 {% if comment_form %}
-<form method="POST" class="comment-form" >{% csrf_token %}
-    {{ comment_form.text }}<a class="smaller" href="{% url 'zen' %}">guidelines</a>
-    <br>
+<form method="POST" class="comment-form clearfix">{% csrf_token %}
+    {{ comment_form.text }}
+    <p class="clearfix small"></p>
     <button type="submit">add comment</button>
+    <ul class="horizontal-list">
+        <li><a class="smaller" href="{% url 'zen' %}">guidelines</a></li>
+        <li><a class="smaller" href="javascript:toggleFormattingHelp()">formatting help</a></li>
+    </ul>
 </form>
+
+{% include "news/formatting_help.html" %}
+
 {% endif %}
 
 
