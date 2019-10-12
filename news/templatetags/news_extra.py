@@ -49,8 +49,21 @@ def item_content(**kwargs):
 def item_control(**kwargs):
     return kwargs
 
-renderer = mistune.Renderer(escape=True, hard_wrap=True)
-markdown = mistune.Markdown(renderer=renderer)
+#renderer = mistune.Renderer(escape=True, hard_wrap=True)
+
+class MarkdownRenderer(mistune.Renderer):
+
+    @classmethod
+    def setup(cls):
+        renderer = cls(escape=True, hard_wrap=True)
+        return mistune.Markdown(renderer=renderer)
+
+    def header(self, text, level, raw=None):
+        level = min(level + 2, 6)
+        return super().header(text, level, raw)
+
+
+markdown = MarkdownRenderer.setup()
 
 @register.filter
 def comment_markdown(value):
