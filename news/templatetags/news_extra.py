@@ -49,7 +49,8 @@ def item_content(**kwargs):
 def item_control(**kwargs):
     return kwargs
 
-markdown = mistune.Markdown()
+renderer = mistune.Renderer(escape=True, hard_wrap=True)
+markdown = mistune.Markdown(renderer=renderer)
 
 @register.filter
 def comment_markdown(value):
