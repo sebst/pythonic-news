@@ -49,7 +49,6 @@ def item_content(**kwargs):
 def item_control(**kwargs):
     return kwargs
 
-#renderer = mistune.Renderer(escape=True, hard_wrap=True)
 
 class MarkdownRenderer(mistune.Renderer):
 

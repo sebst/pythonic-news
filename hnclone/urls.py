@@ -11,7 +11,7 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('digest/', include('emaildigest.urls')),
     path('admin/', admin.site.urls),
-]#+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
