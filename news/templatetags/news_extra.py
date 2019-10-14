@@ -1,4 +1,7 @@
 from django import template
+from django.utils.safestring import mark_safe
+
+import mistune
 
 register = template.Library()
 
@@ -45,3 +48,22 @@ def item_content(**kwargs):
 @register.inclusion_tag('news/_item_control_tag.html')
 def item_control(**kwargs):
     return kwargs
+
+
+class MarkdownRenderer(mistune.Renderer):
+
+    @classmethod
+    def setup(cls):
+        renderer = cls(escape=True, hard_wrap=True)
+        return mistune.Markdown(renderer=renderer)
+
+    def header(self, text, level, raw=None):
+        level = min(level + 2, 6)
+        return super().header(text, level, raw)
+
+
+markdown = MarkdownRenderer.setup()
+
+@register.filter
+def comment_markdown(value):
+    return mark_safe(markdown(value))

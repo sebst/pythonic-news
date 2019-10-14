@@ -1,0 +1,72 @@
+<div class="formatting-help closed">
+    <table>
+        <thead>
+            <tr>
+                <th>Markdown</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre># Heading level 1</pre></td>
+                <td><h3>Heading level 1</h3></td>
+            </tr>
+            <tr>
+                <td><pre>## Heading level 2</pre></td>
+                <td><h4>Heading level 2</h3></td>
+            </tr>
+            <tr>
+                <td><pre>### Heading level 3</pre></td>
+                <td><h5>Heading level 3</h3></td>
+            </tr>
+            <tr>
+                <td><pre>#### Heading level 4</pre></td>
+                <td><h6>Heading level 4</h3></td>
+            </tr>
+            <tr>
+                <td><pre>
+* unordered item 1
+* unordered item 2
+* unordered item 3
+                </pre></td>
+                <td>
+                    <ul>
+                        <li>unordered item 1</li>
+                        <li>unordered item 2</li>
+                        <li>unordered item 3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><pre>
+1. ordered item 1
+2. ordered item 2
+3. ordered item 3
+                </pre></td>
+                <td>
+                    <ol>
+                        <li>ordered item 1</li>
+                        <li>ordered item 2</li>
+                        <li>ordered item 3</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td><pre>
+[title](https://www.google.com/)
+                </pre></td>
+                <td>
+                    <a href="#">title</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+const helpElm = document.querySelector('.formatting-help');
+let helpClosed = true;
+window.toggleFormattingHelp = function() {
+    helpClosed = !helpClosed;
+    helpElm.className = 'formatting-help ' + (helpClosed ? 'closed' : '');
+};
+</script>
