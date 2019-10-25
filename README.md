@@ -26,7 +26,7 @@ python manage.py migrate
 ```
 
 ### Extra setup work
-* Set ```Debug=True``` if necessary
+* Set ```DEBUG=True``` if necessary
 * Add ```127.0.0.1``` to ```ALLOWED_HOSTS```
 
 ### Run Django Server
