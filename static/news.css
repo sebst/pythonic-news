@@ -13,13 +13,13 @@ Granite Gray        #646464
 
 /* General formatting */
 
-body        { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#646464; }
-td          { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#646464; }
-.smaller    { font-size:7pt; }
+body        { font-family:Verdana, Geneva, sans-serif; font-size:12pt; color:#646464; }
+td          { font-family:Verdana, Geneva, sans-serif; font-size:12pt; color:#646464; }
+.smaller    { font-size:10pt; }
 
-input       { font-family:monospace; font-size:10pt; }
+input       { font-family:monospace; font-size:12pt; }
 input[type=\"submit\"] { font-family:Verdana, Geneva, sans-serif; }
-textarea    { font-family:monospace; font-size:10pt; }
+textarea    { font-family:monospace; font-size:12pt; }
 
 .clearfix { overflow: hidden; clear: both }
 
