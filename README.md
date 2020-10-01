@@ -1,5 +1,6 @@
 
 # pythonic-news
+#Its an amazing project
 A Hacker News lookalike written in Python/Django, powering [https://news.python.sc](https://news.python.sc)
 
 
