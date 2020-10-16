@@ -12,7 +12,8 @@ A Hacker News lookalike written in Python/Django, powering [https://news.python.
 ### Set up virtual environment
 ```shell script
 python -m venv venv/
-source venv/bin/activate
+source venv/bin/activate(for activate the environmant)
+deactivte(for deactivate the environment)
 ```
 
 ### Install Dependencies
@@ -34,3 +35,5 @@ python manage.py migrate
 python manage.py runserver
 ```
 Now you can access the website at ```127.0.0.1:8000```.
+
+
