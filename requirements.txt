@@ -52,7 +52,7 @@ sqlparse==0.3.0
 termcolor==1.1.0
 texttable==0.9.1
 traitlets==4.3.2
-urllib3==1.24.3
+urllib3==1.26.5
 wcwidth==0.1.7
 webencodings==0.5.1
 websocket-client==0.56.0
