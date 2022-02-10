@@ -12,7 +12,7 @@ chardet==3.0.4
 colorama==0.3.9
 coverage==4.5.4
 decorator==4.4.0
-Django==2.2.5
+Django==2.2.27
 django-debug-toolbar==2.0
 django-htmlmin==0.11.0
 django-js-asset==1.2.2
